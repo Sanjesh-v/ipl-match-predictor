@@ -44,15 +44,17 @@ preprocessor = ColumnTransformer(
             "cat",
             OneHotEncoder(handle_unknown="ignore"),
             [
-    "team1",
-    "team2",
-    "venue",
-    "toss_winner",
-    "toss_decision"
-]
+                "team1",
+                "team2",
+                "venue",
+                "toss_winner",
+                "toss_decision"
+            ]
         )
-    ]
+    ],
+    remainder="passthrough"
 )
+
 
 # Create pipeline
 model = Pipeline(
